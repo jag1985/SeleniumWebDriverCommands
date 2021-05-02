@@ -1,0 +1,5 @@
+1618156170618	geckodriver	INFO	Listening on 127.0.0.1:12946
+1618156174638	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "0" "-foreground" "-no-remote" "-profile" "C:\\Users\\JAGDIS~1\\AppData\\Local\\Temp\\rust_mozprofileiH6p28"
+DevTools listening on ws://localhost:49924/devtools/browser/b03e8247-3a64-498d-b3c6-e835227a13d6
+1618156176811	Marionette	INFO	Listening on port 49909
+1618156177276	Marionette	WARN	TLS certificate errors will be ignored for this session

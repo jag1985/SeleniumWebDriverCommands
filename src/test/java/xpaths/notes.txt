@@ -1,0 +1,106 @@
+Address of Element.
+
+Two types:
+a_ Complete Xpath / Absolute Xpath
+b) Partial Xpath
+
+
+a) Complete Xpath / Absolute Xpath
+/html/body/div[1]/div[3]/div[1]/div/div/div[1]/div[1]
+
+String text = driver.findElement(By.xpath("/html/body/div/main/div[2]/div[1]/div[1]/h1")).getText();
+System.out.println(text);
+
+We don't prefer, because if tomorrow something gets added, then whole xpath goes for a toss.
+
+
+b) Partial Xpath
+Everything starts with //
+//* means all the tags on the page
+//a means all the links on the page
+//input
+//*[@id="username"]
+
+
+
+//input[@name='email']
+
+
+custom xpaths
+//input[@name='session_key']
+
+One element - can have multiple xpath
+//*[@id='email']
+//input[@name='email']
+//input[@name='email' and @id='email']
+//input[@name='pass' or @id='email']
+
+//form[@autocomplete='on']/div[1]/input
+//*[@id="container"]/div/div[3]/div/div[2]/div/form/div[1]/input
+
+
+Multiple Elements - same xpath
+//div[@class="_30jeq3 _1_WHN1"]  -represents all prices (flipkart)
+//ul[@class ='navbar-nav mr-auto']/li[1]/a -represents first link (cricinfo)
+//ul[@class ='navbar-nav mr-auto']/li[2]/a -represents 2nd link (cricinfo)
+
+//ul[@class ='navbar-nav mr-auto']/li/a -this will highlight all links (cricinfo)
+
+
+-----Text------
+//a[text()='Edition IN']
+//td[text()='12']
+
+
+
+Variable IDs
+display-price-5622454656
+display-price-2626223232
+
+solution to this is
+a) contains
+b) starts-with
+
+xxxxx23232323323   	//*[starts-with(@id,'xxxxx')]
+232323xxxxxxxxx		//*[contains(@id,'xxxxx')]
+12121xxxxxx32323	//*[contains(@id,'xxxxx')]
+2324343434343442	try some other xpath
+
+
+//article[contains(@class,'gridlet  two-column sticky')]
+
+
+
+-----------Position---------------
+
+//ul[@class='sc-cSHVUG bYPcOh']/li[3]/a
+//ul[@class='sc-cSHVUG bYPcOh']/li[position()=3]/a
+
+
+//div[@class='_2Brcj4'][3]
+
+
+----------ancestor/descendant------------
+//ul[@id='menu-main-menu']/li/a
+//ul[@id='menu-main-menu']/descendant::a -------all the tags under the tag
+//div[@class='_2Brcj4']/descendant::a
+//div[@class='_2WErco row']/ancestor::div[2]/div[1]-----tags above the tag
+
+
+------------child/parent-------------
+//div[@class='_3rc_xQ']/child::div
+//div[@class='_3rc_xQ']/parent::footer
+
+
+
+-------------folowing/preceeding-----------
+//div[@class='_3rc_xQ']/following::a
+//div[@class='_3rc_xQ']/preceding::div[1]
+
+
+
+-------------folowing-sibling/preceeding-sibling-----------
+//*[@id="align"]/span[5]/input
+//label[text()='Female']/preceding-sibling::input.....used mostly in case of radio buttons
+
+
